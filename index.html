@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinic Catalyst - An Offer for Nicole &amp; Maria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#00B4A0; --teal-bright:#00D4BC; --teal-dark:#007A6E;
+    --hero-dark:#0A2A28; --hero-mid:#0D3D38; --dark-section:#0E2D2A; --card-dark:#103A36;
+    --white:#FFFFFF; --off-white:#F4F4F4; --light-gray:#EBEBEB;
+    --text-dark:#1A1A1A; --text-mid:#444; --text-light:#777; --border:#E0E0E0;
+    --red:#E84040; --gold:#D4A853; --gold-soft:#F0E2BF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Open Sans',sans-serif;background:var(--hero-dark);color:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 1.5rem;}
+  .label{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--teal-bright);margin-bottom:1rem;}
+  .badge-red{display:inline-block;background:rgba(232,64,64,.12);border:1px solid var(--red);color:#ff8b8b;font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.42rem 1.1rem;border-radius:50px;margin-bottom:1.4rem;}
+  .red{color:var(--red);}
+  h1,h2,h3{font-family:'Montserrat',sans-serif;text-transform:uppercase;line-height:1.12;}
+  em{font-style:normal;color:var(--teal-bright);}
+  p{margin-bottom:1rem;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(10,42,40,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,212,188,.18);}
+  .nav-inner{max-width:860px;margin:0 auto;padding:.9rem 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+  .nav-logo{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:900;letter-spacing:.06em;}
+  .nav-logo span{color:var(--teal-bright);}
+  .nav-tag{font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+
+  /* HERO */
+  .hero{padding:6rem 0 5rem;text-align:center;background:radial-gradient(circle at 50% 0%,rgba(0,212,188,.12),transparent 62%),var(--hero-dark);}
+  .hero h1{font-size:clamp(2.1rem,5.2vw,3.4rem);font-weight:900;letter-spacing:.01em;margin-bottom:1.3rem;}
+  .hero h1 em{color:var(--teal-bright);}
+  .hero p{font-size:clamp(1.05rem,1.7vw,1.22rem);font-weight:300;color:rgba(255,255,255,.8);max-width:620px;margin:0 auto;}
+  .rule{width:60px;height:3px;background:var(--red);margin:1.8rem auto 0;}
+
+  section{padding:4rem 0;}
+  h2.section-title{font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:800;margin-bottom:1.1rem;}
+  h2.section-title em{color:var(--teal-bright);}
+  .section-lead{font-size:1.08rem;color:rgba(255,255,255,.8);margin-bottom:2rem;}
+
+  /* VIDEO CARD */
+  .video-card{background:linear-gradient(155deg,var(--hero-mid),var(--dark-section));border:1px solid rgba(0,212,188,.25);border-radius:16px;padding:3rem 2.5rem;text-align:center;}
+  .video-card h3{font-size:1.6rem;font-weight:800;margin-bottom:.8rem;}
+  .video-card p{color:rgba(255,255,255,.78);max-width:560px;margin:0 auto 1.8rem;font-size:1rem;}
+  .play-btn{display:inline-flex;align-items:center;gap:.8rem;background:var(--teal-bright);color:var(--hero-dark);text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:1rem 2.4rem;border-radius:50px;transition:transform .2s,box-shadow .2s;}
+  .play-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,212,188,.35);}
+  .play-icon{width:24px;height:24px;border-radius:50%;background:var(--hero-dark);display:inline-flex;align-items:center;justify-content:center;}
+  .play-icon::before{content:"";border-left:8px solid var(--teal-bright);border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:3px;}
+  .passcode{margin-top:1.4rem;font-size:.85rem;color:rgba(255,255,255,.65);letter-spacing:.03em;}
+  .passcode strong{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--gold-soft);background:rgba(0,0,0,.3);padding:.25rem .8rem;border-radius:6px;letter-spacing:.12em;margin-left:.3rem;}
+  .video-note{font-size:.85rem;color:rgba(255,255,255,.5);text-align:center;margin-top:1rem;}
+
+  /* PILLARS */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.8rem;}
+  .pillar{background:var(--card-dark);border:1px solid rgba(0,212,188,.16);border-radius:12px;padding:1.6rem;}
+  .pillar h4{font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--teal-bright);margin-bottom:.6rem;}
+  .pillar p{font-size:.92rem;color:rgba(255,255,255,.72);margin:0;}
+
+  /* OFFER CARD (light) */
+  .offer-card{background:var(--white);color:var(--text-dark);border-radius:16px;border-left:5px solid var(--red);padding:2.8rem;margin-top:1.8rem;box-shadow:0 24px 60px rgba(0,0,0,.35);}
+  .offer-card .tag{display:inline-block;font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;font-weight:800;color:var(--teal-dark);margin-bottom:.9rem;}
+  .offer-card h3{font-size:1.7rem;font-weight:800;color:var(--hero-dark);margin-bottom:.4rem;}
+  .price-block{display:flex;align-items:baseline;gap:.5rem;margin:1rem 0 .3rem;}
+  .price{font-family:'Montserrat',sans-serif;font-size:3rem;font-weight:900;color:var(--teal-dark);line-height:1;}
+  .price small{font-size:1rem;color:var(--text-light);font-weight:600;font-family:'Open Sans';}
+  .offer-list{list-style:none;margin-top:1.4rem;}
+  .offer-list li{position:relative;padding-left:1.9rem;margin-bottom:.85rem;font-size:1rem;color:var(--text-mid);}
+  .offer-list li::before{content:"";position:absolute;left:0;top:.5rem;width:9px;height:9px;border-radius:50%;background:var(--teal-bright);box-shadow:0 0 0 4px rgba(0,180,160,.18);}
+
+  /* REFERRAL - the loud one */
+  .referral{background:linear-gradient(150deg,#0E3D38,#0A2A28);border:2px solid var(--gold);border-radius:18px;padding:3rem 2.8rem;margin-top:1.8rem;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.4);position:relative;overflow:hidden;}
+  .referral::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,168,83,.18),transparent 65%);pointer-events:none;}
+  .referral .tag{display:inline-block;font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.66rem;font-weight:800;color:var(--gold);margin-bottom:1.2rem;}
+  .ref-headline{font-family:'Montserrat',sans-serif;font-weight:900;line-height:1;margin-bottom:.4rem;}
+  .ref-amount{display:block;font-size:clamp(4rem,12vw,6.5rem);color:var(--gold);text-shadow:0 4px 24px rgba(212,168,83,.4);letter-spacing:-.02em;}
+  .ref-sub{display:block;font-family:'Montserrat',sans-serif;font-size:clamp(1rem,3vw,1.5rem);font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--white);margin-top:.6rem;}
+  .ref-body{max-width:560px;margin:1.6rem auto 0;color:rgba(255,255,255,.85);font-size:1.02rem;}
+  .ref-body strong{color:var(--gold-soft);font-weight:700;}
+  .ref-maths{margin:2rem auto 0;max-width:520px;background:rgba(0,0,0,.28);border:1px solid rgba(212,168,83,.35);border-radius:12px;padding:1.3rem 1.5rem;font-size:1.05rem;color:rgba(255,255,255,.9);}
+  .ref-maths b{font-family:'Montserrat',sans-serif;color:var(--gold);font-weight:900;}
+
+  /* CLOSE */
+  .close{text-align:center;padding:5rem 0 4rem;background:radial-gradient(circle at 50% 100%,rgba(0,212,188,.1),transparent 60%);}
+  .close h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;margin-bottom:1rem;}
+  .close p{color:rgba(255,255,255,.8);max-width:540px;margin:0 auto 1rem;font-size:1.05rem;}
+  .signoff{font-family:'Montserrat',sans-serif;font-weight:700;font-style:italic;font-size:1.5rem;color:var(--teal-bright);margin-top:1.6rem;text-transform:none;}
+  .footer{text-align:center;padding:2rem 0;font-size:.78rem;color:rgba(255,255,255,.45);letter-spacing:.06em;font-family:'Montserrat',sans-serif;text-transform:uppercase;}
+
+  @media(max-width:640px){
+    .pillars{grid-template-columns:1fr;}
+    .offer-card,.referral,.video-card{padding:2rem 1.6rem;}
+    section{padding:3rem 0;}
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">CLINIC <span>CATALYST</span></div>
+      <div class="nav-tag">For Nicole &amp; Maria</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="badge-red">A private proposal &middot; Kelly &amp; Alicia</div>
+      <h1>Let's install <em>the whole system</em> into your business</h1>
+      <p>The AI and marketing operating system you saw on our call - built into your back end, run with you screen by screen.</p>
+      <div class="rule"></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="video-card">
+        <h3>Watch the system first</h3>
+        <p>A walk-through of how the AIOS works, with a live demo of the pre-call-brief skill researching a real business in seconds - so you can see exactly what your clients would get their hands on.</p>
+        <a class="play-btn" href="https://us02web.zoom.us/rec/share/P83QxJvCMsXRw9CLuFrqsEf510j0S6pBU8BU66N8oe2X2L4rNRR2XiPEfjGEe27_.a2BYr5AvwDU7WJJ1" target="_blank" rel="noopener">
+          <span class="play-icon"></span> Watch the walk-through
+        </a>
+        <div class="passcode">Passcode:<strong>R^0Waxx2</strong></div>
+      </div>
+      <p class="video-note">Around 15 minutes - worth grabbing a cuppa for.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="label">The offer</div>
+      <h2 class="section-title">A two-day workshop to install it in <em>your</em> system</h2>
+      <p class="section-lead">We sit together over two days and build the full system into your own business - so you and Nicole are running it daily before you ever take it to your clients. You bring the laptop, we are in the room screen by screen until it's live and yours.</p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <h4>Kelly's AI system</h4>
+          <p>Skills, brand context, content engines, client research, landing pages - the AIOS deployed and working inside your back end.</p>
+        </div>
+        <div class="pillar">
+          <h4>Alicia's marketing system</h4>
+          <p>The resonance and neuro-emotive marketing layer wired straight into how you create, message, and convert.</p>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <span class="tag">Done together, with you</span>
+        <h3>The 2-Day Install Workshop</h3>
+        <div class="price-block"><span class="price">$5,000</span><small>+ GST</small></div>
+        <ul class="offer-list">
+          <li>Two days, hands-on, building the full AI + marketing system into your own business</li>
+          <li>Your brand voice, brand guides and client docs loaded in so it has context from day one</li>
+          <li>The skill library set up live - content, carousels, landing pages, full pre-call research</li>
+          <li>GHL and your tools connected so the workflows actually run end to end</li>
+          <li>You walk out running it yourself - capability transferred, not a dependency created</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="label">And the part that pays you back</div>
+      <h2 class="section-title">Bring your people, earn on <span class="red">every referral</span></h2>
+
+      <div class="referral">
+        <span class="tag">Referral partnership</span>
+        <div class="ref-headline">
+          <span class="ref-amount">$500</span>
+          <span class="ref-sub">Referral commission, per business</span>
+        </div>
+        <p class="ref-body">Once your own system is in, open it up to the clients you're already guiding. For <strong>every business you refer</strong> into our 2-day workshop, we pay you <strong>$500</strong> - capped at 10 per workshop, so a full room earns you up to <strong>$5,000</strong> back.</p>
+        <div class="ref-maths">
+          A full workshop of <b>10 referred businesses</b> = <b>$5,000</b> back to you. Effectively your own install, paid for by the people you bring along.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <h2>Ready when you are</h2>
+      <p>Have a watch of the walk-through, and let's lock in two days to get this built into your business. Any questions at all, just reply and I'll talk you through it.</p>
+      <div class="signoff">Kelly x</div>
+    </div>
+  </section>
+
+  <div class="footer">Clinic Catalyst &nbsp;&middot;&nbsp; Kelly Wotherspoon &amp; Alicia Hagan</div>
+
+</body>
+</html>
